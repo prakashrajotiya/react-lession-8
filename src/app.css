@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+  font-family: system-ui;
+}
+.membercard {
+  width: 100%;
+  border: 2px solid #3d4070;
+  /* padding: 15px; */
+  border-radius: 7px;
+  overflow: hidden;
+}
+.membercard-info {
+  padding: 15px;
+}
+.membercard h2 {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.membercard p {
+  margin-top: 5;
+  margin-bottom: 0;
+}
+.membercard img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+.memberlist {
+  padding: 15px;
+  display: flex;
+  /* gap: 15px; */
+  flex-wrap: wrap;
+  /* justify-content: center; */
+}
+.searchbar {
+  text-align: center;
+  padding: 0;
+}
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+.col {
+  padding: 7px 7px;
+  width: 25%;
+}
+
+input {
+  width: 50%;
+  max-width: 600px;
+}
+input,
+button {
+  padding: 10px;
+  min-height: 50px;
+  /* border-radius: 4px; */
+  font-size: 16px;
+  border: none;
+  outline: none;
+}
+button {
+  cursor: pointer;
+}
+.searchform {
+  background-color: #3d4070;
+  padding: 10px;
+}

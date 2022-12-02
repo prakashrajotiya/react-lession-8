@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Prakash Kumar",
+    "avatar": "https://via.placeholder.com/300.png?text=Prakash Kumar",
+
+    "designation": "Front End Developer"
+  },
+
+  {
+    "id": 2,
+    "name": "Atish Kushwaha",
+    "avatar": "https://via.placeholder.com/300.png?text=Atish Kushwaha",
+    "designation": "Back End Developer"
+  },
+  {
+    "id": 3,
+    "name": "Gravit Joshi",
+    "avatar": "https://via.placeholder.com/300.png?text=Gravit Joshi",
+    "designation": "Full Stack Developer"
+  },
+  {
+    "id": 4,
+    "name": "Krishna",
+    "avatar": "https://via.placeholder.com/300.png?text=Krishna",
+    "designation": "Back End Developer"
+  },
+  {
+    "id": 5,
+    "name": "Rishika Swaraj",
+    "avatar": "https://via.placeholder.com/300.png?text=Rishika Swaraj",
+    "designation": "Front End Developer"
+  },
+  {
+    "id": 6,
+    "name": "Rajashekhara bhat",
+    "avatar": "https://via.placeholder.com/300.png?text=Rajashekhara bhat",
+    "designation": "Front End Developer"
+  },
+  {
+    "id": 7,
+    "name": "shubham choudhary",
+    "avatar": "https://via.placeholder.com/300.png?text=shubham choudhary",
+    "designation": "Full Stack Developer"
+  },
+  {
+    "id": 8,
+    "name": "Vaibhav",
+    "avatar": "https://via.placeholder.com/300.png?text=Vaibhav",
+    "designation": "Back End Developer"
+  },
+  {
+    "id": 9,
+    "name": "Anuradha",
+    "avatar": "https://via.placeholder.com/300.png?text=Anuradha",
+    "designation": "Full Stack Developer"
+  }
+]
