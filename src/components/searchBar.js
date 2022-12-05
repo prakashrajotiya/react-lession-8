@@ -1,16 +1,17 @@
 import { useState } from "react";
 import data from "../../data.json";
 
-const SearchBar = ({ setmemberData }) => {
+const SearchBar = ({ memberList, setmemberData }) => {
   // input search var
   let [searchValue, setsearchValue] = useState("");
 
   //   form submit method
   const formSubmit = (e) => {
     e.preventDefault();
-    let filteredData = data.filter((item) =>
-      item.name.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())
+    let filteredData = memberList.filter((item) =>
+      item.login.toLowerCase().includes(searchValue.toLowerCase())
     );
+
     setmemberData(filteredData);
   };
 
