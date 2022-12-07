@@ -1,5 +1,5 @@
 import { useState } from "react";
-import data from "../../data.json";
+import data from "../constant/data.json";
 
 const SearchBar = ({ memberList, setmemberData }) => {
   // input search var

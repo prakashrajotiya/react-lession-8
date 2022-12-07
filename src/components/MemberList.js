@@ -1,12 +1,14 @@
 import MemberCard from "./membercard";
-
+import { NavLink } from "react-router-dom";
 const MemberList = (props) => {
   console.log(props);
   if (props.memberData.length > 0) {
     const memberList = props.memberData.map((member) => {
       return (
         <div className="col" key={member.id}>
-          <MemberCard member={member} />
+          <NavLink>
+            <MemberCard member={member} />
+          </NavLink>
         </div>
       );
     });
