@@ -6,9 +6,7 @@ const MemberList = (props) => {
     const memberList = props.memberData.map((member) => {
       return (
         <div className="col" key={member.id}>
-          <NavLink>
-            <MemberCard member={member} />
-          </NavLink>
+          <MemberCard member={member} />
         </div>
       );
     });
