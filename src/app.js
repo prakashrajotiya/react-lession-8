@@ -4,39 +4,45 @@ import SearchBar from "./components/searchBar";
 import AboutUs from "./components/About";
 import MemberDetail from "./components/memberDetail";
 import "./app.css";
-import { useEffect, useState } from "react";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { useEffect, useState, Outlet } from "react";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Outlet,
+  NavLink,
+} from "react-router-dom";
 
-const Header = (props) => {
+const Header = () => {
   return (
-    <div className="searchbar">
-      <SearchBar
-        memberList={props.memberData}
-        setmemberData={props.setmemberList}
-      />
-    </div>
+    <header className="header">
+      <NavLink to="/">Home</NavLink> &nbsp;
+      <NavLink to="/search">Search</NavLink>
+    </header>
   );
 };
-const Search = (props) => {
-  return (
-    <div className="memberlist">
-      <MemberList memberData={props.memberList} />
-    </div>
-  );
-};
-const Main = () => {
+const Search = () => {
   const [memberData, setmemberData] = useState([]);
   const [memberList, setmemberList] = useState([]);
   useEffect(() => {
     apiCall();
+    allapiCall();
   }, []);
   // console.log(Routes);
-
+  async function allapiCall() {
+    const res = await Promise.all([
+      fetch("https://api.github.com/users/dinesh"),
+      fetch("https://api.github.com/users/suresh"),
+      fetch("https://api.github.com/users/rahul"),
+    ]);
+    const result = [
+      await res[0].json(),
+      await res[1].json(),
+      await res[2].json(),
+    ];
+  }
   async function apiCall() {
-    const res = await fetch("https://api.github.com/users/prakashrajotiya");
-    const res1 = await fetch(
-      "https://api.github.com/users/prakash-ftxinfotech"
-    );
+    const res = await fetch("https://api.github.com/users/dinesh");
+    const res1 = await fetch("https://api.github.com/users/suresh");
     const res2 = await fetch("https://api.github.com/users/rahul");
     const data = await res.json();
     const data1 = await res1.json();
@@ -46,11 +52,23 @@ const Main = () => {
     setmemberList(result);
   }
   return (
+    <>
+      <SearchBar memberList={memberData} setmemberData={setmemberList} />
+      <div className="memberlist">
+        <MemberList memberData={memberList} />
+      </div>
+    </>
+  );
+};
+const Home = () => {
+  return <h1>This is Home Page</h1>;
+};
+const Main = () => {
+  return (
     <div className="main">
       <div className="container">
-        <Header memberData={memberData} setmemberList={setmemberList} />
+        <Header />
         <Outlet />
-        {/* <Search memberList={memberList} /> */}
       </div>
     </div>
   );
@@ -61,14 +79,16 @@ const appRouter = createBrowserRouter([
     path: "/",
     element: <Main />,
     children: [
-      { path: "home", element: <Search /> },
-      { path: "member", element: <MemberDetail /> },
+      { path: "", element: <Home /> },
+      { path: "search", element: <Search /> },
+      { path: "member/:login", element: <MemberDetail /> },
     ],
   },
-  // {
-  //   path: "/about",
-  //   element: <AboutUs />,
-  // },
+
+  {
+    path: "/about",
+    element: <AboutUs />,
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
