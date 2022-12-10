@@ -2,11 +2,10 @@
   "name": "react-assignment-4",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel src/index.html",
-    "build": "parcel build"
+    "build": "parcel build src/index.html"
   },
   "author": "",
   "license": "ISC",
