@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import MemberCard from "./membercard";
 const MemberDetail = () => {
   const param = useParams();
   const [userInfo, setuserInfo] = useState({});
@@ -16,7 +15,7 @@ const MemberDetail = () => {
   }
   return (
     <div style={{ width: "500px" }}>
-      <h1>Profile Page</h1>
+      <h1>{userInfo.name} Detail</h1>
       <img src={userInfo.avatar_url}></img>
       <h3>Name : {userInfo.name}</h3>
       <h3>public Repository : {userInfo.public_repos}</h3>
